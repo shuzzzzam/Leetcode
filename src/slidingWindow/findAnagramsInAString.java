@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class findAnagramsInAString {
 	public List<Integer> findAnagrams(String s, String p) {
-		/*
+		/*Leetcode prob 438
 		 * The Logic behind this solution is to maintain the hashmap of pattern string and compare with the fixed slide window of size(Length of pattern string) in source string.
 		 */
         List<Integer> list = new ArrayList<Integer>();
@@ -37,7 +37,7 @@ public class findAnagramsInAString {
         	if(map2.containsKey(ch)) {
         		int val = map2.get(ch);
         		val -= 1;
-        		if(val <= 0) {
+        		if(val == 0) {
         			count--;
         		}
         		map2.put(ch, val);
@@ -52,7 +52,7 @@ public class findAnagramsInAString {
         	if(map2.containsKey(ch1)) {
         		int val = map2.get(ch1);
         		val += 1;
-        		if(val > 0) {
+        		if(val == 1) {
         			count++;
         		}
         		map2.put(ch1, val);
@@ -61,7 +61,7 @@ public class findAnagramsInAString {
         	if(map2.containsKey(ch2)) {
         		int val = map2.get(ch2);
         		val -= 1;
-        		if(val <= 0) {
+        		if(val == 0) {
         			count--;
         		}
         		map2.put(ch2, val);
