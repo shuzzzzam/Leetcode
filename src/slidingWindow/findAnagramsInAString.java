@@ -30,7 +30,7 @@ public class findAnagramsInAString {
         }
         
         HashMap<Character, Integer> map2 = new HashMap<Character, Integer>(map1);
-        int count = map2.size();
+        int count = map2.size();//This is created to keep the count of distict characters in the map.If it becomes zero, then we know that the substring contains the pattern.
         //go in the fixed window size and compare the map2
         for(int i = 0; i < p.length(); i++) {
         	Character ch = s.charAt(i);
