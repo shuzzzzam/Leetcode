@@ -9,7 +9,7 @@ package stack;
  */
 public class NextGreaterElement1 {
 	public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-		/*
+		/* Problem 496 Leetcode
 		 * This problem is solved using stack implementation from right side, since we want next greater from right side
 		 * */
 		
@@ -19,7 +19,7 @@ public class NextGreaterElement1 {
 		}
 		int[] stack = new int[nums2.length];
 		int head = -1;
-		
+		//Stack Implementation for putting large value from right hand side.
 		stack[++head] = nums2[nums2.length - 1];
 		hash[nums2.length - 1] = -1;
 		for(int i = (nums2.length - 2); i >= 0; i--) {
