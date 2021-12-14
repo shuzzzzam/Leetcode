@@ -15,6 +15,7 @@ public class SimplifyCanonicalPath {
 	 * In this problem we used stack for putting folder value and depending on the value, we changed the stack (".." for previous & "." for current folder)
 	 */
 	public String simplifyPath(String path) {
+		//Leetcode problem 71
 		Stack<String> stack = new Stack<String>();
 		StringTokenizer st = new StringTokenizer(path,"/");
 		while(st.hasMoreTokens()) {
