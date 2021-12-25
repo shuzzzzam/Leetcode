@@ -63,7 +63,7 @@ public class LargestAreaOfRectangleInHistogram {
         //Now add the area of two superimposed rectangle formed in left hand side & right hand side. 
         for(int  i = 0; i < heights.length; i++) {
         	if(maxArea < (area1[i] + area2[i] - heights[i])) {
-        		maxArea = (area1[i] + area2[i] - heights[i]);//addition of two areas will have extra area of (height[i] * 1), that's why it is subtracted;
+        		maxArea = (area1[i] + area2[i] - heights[i]);//addition of two areas will have extra area of (height[i] * 1) due to overlapping, that's why it is subtracted;
         	}
         }
         return maxArea;
