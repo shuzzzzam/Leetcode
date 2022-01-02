@@ -3,8 +3,6 @@
  */
 package dp;
 
-import java.util.Arrays;
-
 /**
  * @author fSociety
  *
@@ -13,6 +11,7 @@ public class PartitionEqualSubsetSum {
 	/*
 	 * Leetcode 416
 	 * In this problem we will make use of memoization technique in DP
+	 * Variation of 0/1 Knapsack
 	 */
 	Boolean[][] dp;//For Memoization
     public boolean canPartition(int[] nums) {
