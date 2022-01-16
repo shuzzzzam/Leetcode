@@ -43,6 +43,7 @@ public class TrappingRainWater {
         	}
         }
         
+        //Similar for right hand side greatest heights as explained above.
         head = -1;
         for(int i = height.length - 1; i >= 0 ; i--) {
         	if(head == -1) {
