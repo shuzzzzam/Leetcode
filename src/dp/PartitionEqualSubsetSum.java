@@ -14,7 +14,7 @@ public class PartitionEqualSubsetSum {
 	 * Variation of 0/1 Knapsack
 	 */
 	Boolean[][] dp;//For Memoization
-    public boolean canPartition(int[] nums) {
+    public boolean canPartitionUsingMemoization(int[] nums) {
         boolean result = false;
         int sumValue = 0;
         for(int i = 0; i < nums.length; i++) {
