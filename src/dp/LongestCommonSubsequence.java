@@ -11,6 +11,7 @@ public class LongestCommonSubsequence {
 	/*
 	 * Leetcode 1143
 	 * In this problem, we used top-down approach to solve problem dynamatically.
+	 * We can optimize the code by converting the string to character array.
 	 * 
 	 */
 	public int longestCommonSubsequenceTopDownApproach(String text1, String text2) {
