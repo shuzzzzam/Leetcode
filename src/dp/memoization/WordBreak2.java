@@ -32,6 +32,7 @@ public class WordBreak2 {
 				result = (result | getRecursive(s, str + word + " ", index + word.length(), wordDict, dp, ans));
 			}
 		}
+		return result;
 		
 	}
 }
