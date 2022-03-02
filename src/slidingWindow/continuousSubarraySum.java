@@ -22,12 +22,12 @@ public class continuousSubarraySum {
         for(int i = 1; i < nums.length; i++) {
         	sum[i] = (((sum[i - 1] % k) + (nums[i] % k)) % k); // Good use of modulo operator for divisibility.
         }
-        map.put(0, 1);
+        map.put(0, 1);// initialise it to zero sum
         for(int i = 1; i < nums.length; i++) {
             if(i > 1)
-            	map.put(sum[i - 2], 1);
+            	map.put(sum[i - 2], 1); //To maintain subarray size of atleast two.
 			if(map.containsKey(sum[i])) {
-				flag = true;
+				flag = true; //Whenever we get hold of same key value in map, we know that subarray sum is divisible by K & is atleast size of 2 because of top condition.
 				break;
 			}
 		}
