@@ -14,7 +14,7 @@ public class JumpGame2 {
 	 * Leetcode 45
 	 * This problem is solved by using basic Dp. Using two loops and a dp array to store result.
 	 */
-	public int jumpMemoization(int[] nums) {
+	public int jumpNaive(int[] nums) {
         int[] dp = new int[nums.length];//initialize the dp array
         Arrays.fill(dp, -1);
         dp[nums.length - 1] = 0;//base condition
@@ -25,11 +25,11 @@ public class JumpGame2 {
         	for(int j = 1; j <= jump; j++) {
         		if((i + j) >= nums.length)
         			break;
-        		if(dp[i + j] != -1) {
-                    if(min > dp[i + j]) {
-        			min = dp[i + j];
-        		}
-                }
+				if (dp[i + j] != -1) {
+					if (min > dp[i + j]) {
+						min = dp[i + j];
+					}
+				}
         		
         	}
             if(min != Integer.MAX_VALUE)
