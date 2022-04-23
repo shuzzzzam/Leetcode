@@ -3,6 +3,7 @@
  */
 package dp;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -106,4 +107,63 @@ public class DecodeWays {
 	/*
 	 * Below we will do this code with top-down approach
 	 */
+	
+	public int numDecodings(String s) {
+		set = new HashSet<String>();
+        for(int i = 1; i <= 26; i++) {
+        	set.add(Integer.toString(i));//adding the mapping.
+        }
+        if(s.length() == 1) {
+        	if(set.contains(s))
+        		return 1;
+        	else
+        		return 0;
+        }
+        
+        int[] dp = new int[s.length()];
+        Arrays.fill(dp, 0);
+        if(set.contains(s.substring(s.length() - 1))) {
+        	dp[s.length() - 1] = 1;
+        }
+        else {
+        	dp[s.length() - 1] = 0;
+        }
+        
+        if(set.contains(s.substring(s.length() - 2)) && set.contains(s.substring(s.length() - 2, s.length() - 1))) {
+        	dp[s.length() - 2] = 1 + dp[s.length() - 1];
+        }
+        else {
+        	if(set.contains(s.substring(s.length() - 2, s.length() - 1))) {
+        		dp[s.length() - 2] = dp[s.length() - 1];
+        	}
+        	else if(set.contains(s.substring(s.length() - 2))) {
+        		dp[s.length() - 2] = 1;
+        	}
+        	else {
+        		dp[s.length() - 2] = 0;
+        	}
+        	
+        }
+        
+        
+        for(int i = s.length() - 3; i >= 0; i--) {
+        	if(set.contains(s.substring(i, i + 1)) && set.contains(s.substring(i, i + 2))) {
+        		dp[i] = dp[i + 2] + dp[i + 1];
+        	}
+        	else {
+        		if(set.contains(s.subSequence(i, i + 1))) {
+        			dp[i] = dp[i + 1];
+        		}
+        		else if(set.contains(s.substring(i, i + 2))) {
+        			dp[i] = dp[i + 2];
+        		}
+        		else {
+        			dp[i] = 0;
+        		}
+        	}
+        }
+        
+        return dp[0];
+        
+    }
 }
